@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>vue test</title>
+    <link rel="stylesheet" href="css/todolist.css" />
+</head>
+
+<body>
+    <div id="app">
+        <h2 class="head">Todo List</h2>
+        <div class="add-todo">
+            <input type="text" placeholder="Todo what?" v-model="newTodo.name" />
+            <button class="btn" @click="addTodo">
+                Add
+            </button>
+        </div>
+        <ul class="todo-list">
+            <li class="todo-list-item" v-for="(todo, index) in filterTodos">
+                <label :class="{complete: todo.completed}">
+                    <input type="checkbox" v-model="todo.completed" />
+                    {{todo.name}}
+                </label>
+                <button class="btn float-right" @click="deleteTodo(index)">
+                    Delete
+                </button>
+            </li>
+        </ul>
+        <div class="filters" v-if="todos.length">
+            <button class="btn" v-for="item in types" :class="{on: item === type}" @click="showType(item)">
+                {{item}}
+            </button>
+            <button class="btn float-right" @click="clearCompleted">
+                Clear completed
+            </button>
+        </div>
+    </div>
+    <script src="../../lib/vue.min.js"></script>
+    <script src="js/todolist.js"></script>
+</body>
+
+</html>

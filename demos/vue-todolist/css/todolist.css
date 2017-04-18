@@ -1,0 +1,46 @@
+ul, li {
+    list-style: none;
+    padding: 0;
+}
+#app {
+    width: 500px;
+    margin: 0 auto;
+    padding: 0 20px 20px;
+    border: 2px solid #ccc;
+}
+.head, .add-todo {
+    text-align: center;
+}
+.complete {
+    color: #ccc;
+    text-decoration: line-through;
+}
+.btn {
+    background: none;
+    border: 1px solid red;
+    border-radius: 3px;
+    outline: none;
+    box-sizing: border-box;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.btn:hover, .btn.on {
+    background-color: red;
+    color: #fff;
+}
+.float-right {
+    float: right;
+}
+.todo-list-item {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+.todo-list-item:last-child {
+    border-bottom: 1px solid #ccc;
+}
+.todo-list-item .btn {
+    display: none;
+}
+.todo-list-item:hover .btn {
+    display: block;
+}
