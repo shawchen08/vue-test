@@ -1,0 +1,17 @@
+{
+    "result": {
+        "todos": [{
+            "name": "aaa",
+            "completed": true
+        }, {
+            "name": "bbb",
+            "completed": false
+        }, {
+            "name": "ccc",
+            "completed": false
+        }, {
+            "name": "ddd",
+            "completed": true
+        }]
+    }
+}

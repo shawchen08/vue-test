@@ -21,15 +21,14 @@ var app = new Vue({
             name: '',
             completed: false
         },
-        todos: [{
-            name: 'aaa',
-            completed: true
-        }, {
-            name: 'bbb',
-            completed: false
-        }],
+        todos: [],
         types: ['All', 'Active', 'Completed'],
         type: 'All'
+    },
+    mounted: function() {
+        this.$nextTick(function() {
+            this.getData();
+        });
     },
     computed: {
         filterTodos: function() {
@@ -37,6 +36,12 @@ var app = new Vue({
         }
     },
     methods: {
+        getData: function() {
+            var _this = this;
+            this.$http.get('data/todosData.json').then(function(res) {
+                _this.todos = res.data.result.todos;
+            });
+        },
         addTodo: function() {
             if (!this.newTodo.name) {
                 return;
@@ -49,9 +54,6 @@ var app = new Vue({
         },
         deleteTodo: function(index) {
             this.todos.splice(index, 1);
-        },
-        showType: function(type) {
-            this.type = type;
         },
         clearCompleted: function() {
             this.todos = filters.active(this.todos);

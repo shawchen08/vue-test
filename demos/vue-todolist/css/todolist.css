@@ -31,16 +31,26 @@ ul, li {
 .float-right {
     float: right;
 }
+.x-btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 100%;
+    font-size: 28px;
+    color: #000;
+    text-decoration: none;
+}
 .todo-list-item {
+    position: relative;
     padding: 10px;
     border-top: 1px solid #ccc;
 }
 .todo-list-item:last-child {
     border-bottom: 1px solid #ccc;
 }
-.todo-list-item .btn {
+.todo-list-item .x-btn {
     display: none;
 }
-.todo-list-item:hover .btn {
+.todo-list-item:hover .x-btn {
     display: block;
 }
