@@ -19,7 +19,7 @@
         </div>
         <ul class="todo-list">
             <li class="todo-list-item" v-for="(todo, index) in filterTodos">
-                <label :class="{'complete': todo.completed}">
+                <label :class="{'complete': todo.completed}" @click="check">
                     <input type="checkbox" v-model="todo.completed" />
                     {{todo.name}}
                 </label>
