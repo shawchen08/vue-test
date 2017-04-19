@@ -19,17 +19,15 @@
         </div>
         <ul class="todo-list">
             <li class="todo-list-item" v-for="(todo, index) in filterTodos">
-                <label :class="{complete: todo.completed}">
+                <label :class="{'complete': todo.completed}">
                     <input type="checkbox" v-model="todo.completed" />
                     {{todo.name}}
                 </label>
-                <button class="btn float-right" @click="deleteTodo(index)">
-                    Delete
-                </button>
+                <a href="javascript:void(0);" class="x-btn" @click="deleteTodo(index)">&times;</a>
             </li>
         </ul>
         <div class="filters" v-if="todos.length">
-            <button class="btn" v-for="item in types" :class="{on: item === type}" @click="showType(item)">
+            <button class="btn" v-for="item in types" :class="{'on': item===type}" @click="type=item">
                 {{item}}
             </button>
             <button class="btn float-right" @click="clearCompleted">
@@ -38,6 +36,7 @@
         </div>
     </div>
     <script src="../../lib/vue.min.js"></script>
+    <script src="../../lib/vue-resource.min.js"></script>
     <script src="js/todolist.js"></script>
 </body>
 
