@@ -57,6 +57,9 @@ var app = new Vue({
         },
         clearCompleted: function() {
             this.todos = filters.active(this.todos);
+        },
+        check: function() {
+            this.filterTodos = filters[this.type.toLowerCase()](this.todos);
         }
     }
 });
